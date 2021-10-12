@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>main</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-size: cover;
+            background-image: url('https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fb0JFSf%2FbtqDO1gVfHp%2F5vxIIRlxpcTeuK7ilWsAJK%2Fimg.jpg');
+        }
+    </style>
+    <script>
+        function change1(){
+            let SGG_NM = document.getElementById("SGG_NM").value;
+            let BJDONG_NM = document.getElementById("BJDONG_NM").value;
+            let FLR_NO = document.getElementById("FLR_NO").value;
+            let HOUSE_GBN_NM = document.getElementById("HOUSE_GBN_NM").value;
+            let RENT_AREA = document.getElementById("RENT_AREA").value;
+            let RENT_CASE_NM = document.getElementById("RENT_CASE_NM").value;// <-- 어떤 자바스크립트 변수를
+            let myVar = 'Hello'
+            // $.post('http://localhost:5000/getjs', {myVar}, function(){
+            //     // Do something once posted.
+            // })
+            // window.location.href="/check?{0}/{1}/{2}/{3}{4}/{5}".format(SGG_NM,BJDONG_NM,FLR_NO,HOUSE_GBN_NM,RENT_AREA,RENT_CASE_NM)
+            window.location.href="/check"
+        }
+        let SGG_NM=['종로구','중구','용산구','성동구','광진구','동대문구','중랑구','성북구','금천구','영등포구','은평구','양천구','강북구','강서구','도봉구','노원구','강남구','서초구','송파구','구로구','강동구','동작구','서대문구','마포구','관악구']
+    </script>    
+
+</head>
+    <body>
+        <table class="table" style="color:gray;">
+            <h1 style="text-align:center">자치구별 전세가 평균 예측 및 평균 </h1>
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">자치구</th>
+                <th scope="col">2022년 전세 평균 예측가(만원)</th>
+                <th scope="col">3년(2019~2021) 평균 전세가(만원)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>종로구</td>
+                <td>{{EXP[0]}}</td>
+                <td>{{AVG[0]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>중구</td>
+                <td>{{EXP[1]}}</td>
+                <td>{{AVG[1]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>용산구</td>
+                <td>{{EXP[2]}}</td>
+                <td>{{AVG[2]}}</td>
+              </tr>
+            </tbody>
+            <tr>
+                <th scope="row">4</th>
+                <td>성동구</td>
+                <td>{{EXP[3]}}</td>
+                <td>{{AVG[3]}}</td>
+              </tr>
+            <tr>
+                <th scope="row">5</th>
+                <td>광진구</td>
+                <td>{{EXP[4]}}</td>
+                <td>{{AVG[4]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">6</th>
+                <td>동대문구</td>
+                <td>{{EXP[5]}}</td>
+                <td>{{AVG[5]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">7</th>
+                <td>중랑구</td>
+                <td>{{EXP[6]}}</td>
+                <td>{{AVG[6]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">8</th>
+                <td>성북구</td>
+                <td>{{EXP[7]}}</td>
+                <td>{{AVG[7]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">9</th>
+                <td>금천구</td>
+                <td>{{EXP[8]}}</td>
+                <td>{{AVG[8]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">10</th>
+                <td>영등포구</td>
+                <td>{{EXP[9]}}</td>
+                <td>{{AVG[9]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">11</th>
+                <td>은평구</td>
+                <td>{{EXP[10]}}</td>
+                <td>{{AVG[10]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">12</th>
+                <td>양천구</td>
+                <td>{{EXP[11]}}</td>
+                <td>{{AVG[11]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">13</th>
+                <td>강북구</td>
+                <td>{{EXP[12]}}</td>
+                <td>{{AVG[12]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">14</th>
+                <td>강서구</td>
+                <td>{{EXP[13]}}</td>
+                <td>{{AVG[13]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">15</th>
+                <td>도봉구</td>
+                <td>{{EXP[14]}}</td>
+                <td>{{AVG[14]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">16</th>
+                <td>노원구</td>
+                <td>{{EXP[15]}}</td>
+                <td>{{AVG[15]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">17</th>
+                <td>강남구</td>
+                <td>{{EXP[16]}}</td>
+                <td>{{AVG[16]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">18</th>
+                <td>서초구</td>
+                <td>{{EXP[17]}}</td>
+                <td>{{AVG[17]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">19</th>
+                <td>송파구</td>
+                <td>{{EXP[18]}}</td>
+                <td>{{AVG[18]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">20</th>
+                <td>구로구</td>
+                <td>{{EXP[19]}}</td>
+                <td>{{AVG[19]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">21</th>
+                <td>강동구</td>
+                <td>{{EXP[20]}}</td>
+                <td>{{AVG[20]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">22</th>
+                <td>동작구</td>
+                <td>{{EXP[21]}}</td>
+                <td>{{AVG[21]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">23</th>
+                <td>서대문구</td>
+                <td>{{EXP[22]}}</td>
+                <td>{{AVG[22]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">24</th>
+                <td>마포구</td>
+                <td>{{EXP[23]}}</td>
+                <td>{{AVG[23]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">25</th>
+                <td>관악구</td>
+                <td>{{EXP[24]}}</td>
+                <td>{{AVG[24]}}</td>
+              </tr>                                                                                               
+        </table>
+    </body>    
+</html>
